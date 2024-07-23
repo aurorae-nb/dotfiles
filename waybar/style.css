@@ -1,0 +1,175 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Font Awesome", "Source Code Pro";
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #ffffff;
+}
+
+window > box {
+    background: #2E3440;
+    border-bottom: 3px transparent;
+    color: white;
+}
+
+tooltip {
+  color: white;
+  background-color: #171717;
+  text-shadow: none;
+}
+
+#workspaces {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+    padding: 0 3px;
+    margin: 0px;
+    min-width: 0px;
+    color: #ffffff;
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.focused {
+    padding: 0 3px;
+    border-bottom: 3px solid #5e81ac;
+    border-top: 2px solid #171717;
+    /*border-radius: 3px;*/
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid #ffb52a;
+}
+
+#window, #custom-notification, #custom-spotify, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-disk, #custom-weather, #language, #tray, #mode, #idle_inhibitor {
+   padding: 0 2px;
+    margin: 0 5px;
+    background: transparent;
+    border-top: 2px solid transparent;
+}
+
+#clock {
+    border-bottom: 3px solid #5e81ac;
+}
+
+#battery {
+    border-bottom: 3px solid #88c0d0;
+}
+
+#bluetooth {
+    border-bottom: 3px solid #81a1c1;
+}
+
+#battery.charging {
+    border-bottom: 3px solid #b7bdf8;
+    animation-name :blink;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    0%{
+        border-bottom: 3px solid transparent;
+    }
+    100% {
+        border-bottom: 3px solid #8bd5ca;
+    }
+}
+
+@keyframes blinkLow {
+    from {
+        border-bottom: 3px solid transparent;
+    }
+    to {
+        border-bottom: 3px solid #8bd5ca;
+    }
+}
+
+*#battery.critical:not(.charging) {
+    animation-name: blinkLow;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    border-bottom: 3px solid #8fbcbb;
+}
+
+#memory {
+    border-bottom: 3px solid #88c0d0;
+}
+
+#backlight {
+    border-bottom: 3px solid #ffffff;
+}
+
+#network {
+    border-bottom: 3px solid #81a1c1;
+}
+
+#network.disconnected {
+    border-bottom: 3px solid #BF616A;
+}
+
+#pulseaudio {
+    border-bottom: 3px solid #81a1c1;
+}
+
+#pulseaudio.muted {
+    border-bottom: 3px solid #ed8796;
+}
+
+#custom-disk {
+    border-bottom: 3px solid #51e258;
+}
+
+#custom-weather {
+    border-bottom: 3px solid #3f87f6; 
+}
+
+#language {
+    border-bottom: 3px solid #fbbc01; 
+}
+
+#temperature {
+    background: #f0932b;
+}
+
+#temperature.critical {
+    background: #eb4d4b;
+}
+
+#tray {
+    border-bottom: 3px solid #5e81ac;
+}
+
+#idle_inhibitor {
+    background-color: #171717;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#custom-notification {
+    border-bottom: 3px solid #5e81ac;
+}
+#custom-spotify {
+    border-bottom: 3px solid #d8dee9
+}
